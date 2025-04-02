@@ -216,6 +216,9 @@ GET /posts/{post_id}/comments
 GET /posts/101/comments
 ```
 
+### Example response
+![image](https://github.com/user-attachments/assets/2cfd2a81-1f19-43b0-bfdd-6e8cf3e292f2)
+
 ---
 
 ## Authentication
