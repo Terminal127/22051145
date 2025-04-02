@@ -1,3 +1,6 @@
+> **Note:** In a production environment, sensitive credentials should be stored in environment variables. However, for testing purposes, credentials were hardcoded in this implementation to simplify development and debugging.
+>  **Note:** Screenshots would take some time to load so please be patient.
+
 # FIRST CODE
 # FastAPI Number Service
 
@@ -136,8 +139,8 @@ The service uses token-based authentication for secure API access.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/your-project.git
-   cd your-project
+   git clone https://github.com/Terminal127/22051145
+   cd 22051145
    ```
 2. Install dependencies:
    ```bash
