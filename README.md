@@ -1,4 +1,5 @@
 > **Note:** In a production environment, sensitive credentials should be stored in environment variables. However, for testing purposes, credentials were hardcoded in this implementation to simplify development and debugging.
+> 
 >  **Note:** Screenshots would take some time to load so please be patient.
 
 # FIRST CODE
