@@ -111,12 +111,121 @@ Feel free to open an issue or submit a pull request if you find any bugs or have
 ## License
 This project is licensed under the MIT License.
 
+# SECOND CODE
+# FastAPI User Service
 
-![image](https://github.com/user-attachments/assets/6a3ed858-7163-4644-a233-cd55d64855f8)
-even
-![image](https://github.com/user-attachments/assets/abe147a9-face-4bb5-9865-02505d37e155)
-![image](https://github.com/user-attachments/assets/f5753ae5-1bb9-429f-8962-81d9dccfd701)
-with Random
-![image](https://github.com/user-attachments/assets/0f2925ee-74fe-4b08-81de-ee147c3fe1bc)
-# second code
-![image](https://github.com/user-attachments/assets/8855737b-88b5-4aa3-8aa3-373f72992fa8)
+## Overview
+This FastAPI-based service fetches user data, user posts, and post comments from an external API with authentication. The supported endpoints allow:
+
+- **Fetching all users**
+- **Fetching posts of a specific user**
+- **Fetching comments on a specific post**
+
+The service uses token-based authentication for secure API access.
+
+---
+
+## Features
+- **Authentication**: Uses a token-based authentication system with caching.
+- **FastAPI Integration**: Fully asynchronous API for efficient requests.
+- **Error Handling**: Handles HTTP errors and timeouts gracefully.
+
+---
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/your-project.git
+   cd your-project
+   ```
+2. Install dependencies:
+   ```bash
+   pip install fastapi httpx uvicorn
+   ```
+3. Run the server:
+   ```bash
+   uvicorn main:app --reload
+   ```
+
+---
+
+## API Endpoints
+### 1. Get All Users
+#### Endpoint:
+```http
+GET /users
+```
+#### Response:
+```json
+[
+    {"id": "1", "name": "John Doe"},
+    {"id": "2", "name": "Jane Smith"}
+]
+```
+#### Example Request:
+```http
+GET /users
+```
+#### Example Response:
+![Users Response](https://github.com/user-attachments/assets/8855737b-88b5-4aa3-8aa3-373f72992fa8)
+
+---
+
+### 2. Get Posts of a Specific User
+#### Endpoint:
+```http
+GET /users/{user_id}/posts
+```
+#### Parameters:
+- `user_id`: The unique ID of the user.
+
+#### Response:
+```json
+[
+    {"post_id": "101", "title": "My first post"},
+    {"post_id": "102", "title": "Another post"}
+]
+```
+#### Example Request:
+```http
+GET /users/1/posts
+```
+#### Example Response:
+![User Posts](https://github.com/user-attachments/assets/0d7670c8-1ad0-46e6-9168-5bb1f970c4cf)
+
+---
+
+### 3. Get Comments on a Specific Post
+#### Endpoint:
+```http
+GET /posts/{post_id}/comments
+```
+#### Parameters:
+- `post_id`: The unique ID of the post.
+
+#### Response:
+```json
+[
+    {"comment_id": "1001", "text": "Great post!"},
+    {"comment_id": "1002", "text": "Very helpful!"}
+]
+```
+#### Example Request:
+```http
+GET /posts/101/comments
+```
+
+---
+
+## Authentication
+The API requires authentication to access user and post data. The authentication request is handled automatically in the background, and the token is cached for efficient use.
+
+---
+
+## Error Handling
+- **400 Bad Request**: If an invalid request is made.
+- **500 Internal Server Error**: If authentication or API calls fail.
+- **504 Gateway Timeout**: If the API request times out.
+
+
